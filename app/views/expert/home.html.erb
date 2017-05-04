@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Site made with Mobirise Website Builder v3.12.1, https://mobirise.com -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v3.12.1, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/talw-172x128.png" type="image/x-icon">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+
+    <style>
+        .active {background-color: grey;}
+    </style>
+
+  </head>
+  <body>
+    <section id="ext_menu-3">
+        <nav class="navbar navbar-dropdown navbar-fixed-top">
+            <div class="container">
+                <div class="mbr-table">
+                    <div class="mbr-table-cell">
+                        <div class="navbar-brand">
+                            <a href="<%= root_path %>" class="navbar-logo"><%= image_tag("talw-172x128.png", :alt => "rss feed") %>
+                            </a>
+                            <a class="navbar-caption" href="<%= root_path %>">THE ADAPTIVE LEARNING WIKI</a>
+                        </div>
+                    </div>
+                    <div class="mbr-table-cell">
+                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar" style="height: 100% !important;"><li class="nav-item nav-btn" style="color: white;">Sesión iniciada como <a class="nav-link" href="<%= root_path %>">Cristian Vallejos Pérez</a></li></ul>
+
+                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar" style="    margin-right: 17.5%; height: 100% !important;">
+                            <li class="nav-item <%= action_name == 'home' ? 'active' : '' %>">
+                                <a class="nav-link link" href="<%= experto_path %>">BUSCAR CONTENIDO</a>
+                            </li>
+                            <li class="nav-item <%= action_name == 'edit' ? 'active' : '' %>">
+                                <a class="nav-link link" href="<%= experto_validar_contenido_path %>">VALIDAR CONTENIDO</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section class="mbr-section mbr-after-navbar" id="form2-2" style="background-color: rgb(41, 105, 176); padding-top: 250px; padding-bottom: 300px;">
+            <div class="mbr-section mbr-section__container mbr-section__container--middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-2">¡BIENVENIDO AL PANEL DE EXPERTO!</h3>
+                        <small class="mbr-section-subtitle">Ya puedes comenzar a buscar qué tipo de contenido añadir al sitio, para así contribuir con una mejor educación</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-section mbr-section-nopadding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-10 col-lg-offset-1" data-form-type="formoid">
+                        <div data-form-alert="true"><div hidden="" data-form-alert-success="true"></div></div>
+                        <form class="mbr-form" action="<%= experto_path %>" method="post" data-form-title="FORM">
+                            <input type="hidden" value="MdDxUCsngaaAcDtOPU3UDEtnbyKUVS99kyKv0iSZm1aVV+m7TdLDIYxC/Opc/yBjkLAKL7w92/abi+4uscXtjb0EukUnt/V4QIgsdUAomhnp7r6WGmzOkSSbdab/xSYa" data-form-text="true">
+
+                            <div class="mbr-subscribe mbr-subscribe-dark input-group">
+                                <input type="text" class="form-control" name="text" required="" data-form-field="Text" placeholder="Ingresa palabras claves..." id="text">
+                                <span class="input-group-btn"><button type="submit" class="btn btn-black"><span class="etl-icon icon-magnifying-glass mbr-iconfont mbr-iconfont-btn"></span>Iniciar búsqueda</button></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </body>
+</html>
