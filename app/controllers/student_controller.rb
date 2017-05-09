@@ -19,4 +19,5 @@ class StudentController < ApplicationController
     obj.update({numero_calificaciones: obj.numero_calificaciones+1})
     redirect_to results_path+"?q="+params[:search] and return
   end
+
 end

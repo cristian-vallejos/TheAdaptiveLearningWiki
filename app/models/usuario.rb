@@ -10,7 +10,7 @@ class Usuario
   field :contrasena,            type: String
   field :mail,                  type: String
   field :tipo,                  type: Integer,  default: 2
-  field :perfil,                type: Integer,  default: 1
+  field :perfil,                type: Integer,  default: 0
 
   # == Asociaciones
   #has_many :subscriptions,	class_name: "Payments::Subscription"

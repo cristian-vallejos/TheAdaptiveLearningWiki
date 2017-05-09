@@ -100,14 +100,14 @@
               <div class="row">
                   <div class="col-sm-6 col-md-4 col-md-offset-4">
                       <div class="account-wall" style="border-radius: 20px">
-                          <h1 class="mbr-section-title display-1 text-center" style="color: rgb(41, 105, 176)">Formulario de Registro<br></h1>
+                          <h1 class="mbr-section-title display-1 text-center" style="color: rgb(41, 105, 176); margin-top: 1%">Formulario de Registro<br></h1>
                           <form class="form-signin" action="<%= registro_path %>" method="post">
                             <input id="name" name="name" type="text" class="form-control" style="margin-bottom: 1%" placeholder="Nombre" required autofocus>
                             <input id="user" name="user" type="text" class="form-control" style="margin-bottom: 1%" placeholder="Usuario" required autofocus>
                             <input id="mail" name="mail" type="text" class="form-control" style="margin-bottom: 1%" placeholder="Email" required autofocus>
-                            <input id="pass" name="pass" type="password" class="form-control" placeholder="Contraseña" required>
-                            <button class="btn btn-lg btn-primary btn-block" style="background-color: rgb(41, 105, 176)" type="submit">
-                                Registrar cuenta</button><br>
+                            <input id="pass" name="pass" type="password" class="form-control" style="margin-bottom: 1%" placeholder="Contraseña" required>
+                            <input id="check_pass" name="check_pass" type="password" class="form-control" placeholder="Confirmar contraseña" required>
+                            <button class="btn btn-lg btn-primary btn-block" style="background-color: rgb(41, 105, 176)" type="submit">Continuar</button>
                           </form>
                       </div>
                       <a href="<%= root_path %>" class="text-center new-account" style="color: white;">Volver </a>

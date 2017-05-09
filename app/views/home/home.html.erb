@@ -16,10 +16,8 @@
   </head>
   <body>
     <section id="ext_menu-3">
-
         <nav class="navbar navbar-dropdown navbar-fixed-top">
             <div class="container">
-
                 <div class="mbr-table">
                     <div class="mbr-table-cell">
                         <div class="navbar-brand">
@@ -27,22 +25,17 @@
                             </a>
                             <a class="navbar-caption" href="<%= root_path %>">THE ADAPTIVE LEARNING WIKI</a>
                         </div>
-
                     </div>
                     <div class="mbr-table-cell">
-
                         <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                             <div class="hamburger-icon"></div>
                         </button>
-
                         <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="<%= registro_path %>">REGISTRARSE</a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-secondary" href="<%= login_path%>">INICIAR SESIÓN</a></li></ul>
                         <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                             <div class="close-icon"></div>
                         </button>
-
                     </div>
                 </div>
-
             </div>
         </nav>
     </section>
@@ -63,11 +56,11 @@
                 <div class="row">
                     <div class="col-xs-12 col-lg-10 col-lg-offset-1" data-form-type="formoid">
                         <div data-form-alert="true"><div hidden="" data-form-alert-success="true"></div></div>
-                        <form class="mbr-form" action="<%= experto_path %>" method="post" data-form-title="FORM">
+                        <form class="mbr-form" action="<%= search_path %>" method="get" data-form-title="FORM">
                             <input type="hidden" value="MdDxUCsngaaAcDtOPU3UDEtnbyKUVS99kyKv0iSZm1aVV+m7TdLDIYxC/Opc/yBjkLAKL7w92/abi+4uscXtjb0EukUnt/V4QIgsdUAomhnp7r6WGmzOkSSbdab/xSYa" data-form-text="true">
 
                             <div class="mbr-subscribe mbr-subscribe-dark input-group">
-                                <input type="text" class="form-control" name="text" required="" data-form-field="Text" placeholder="Ingresa palabras claves..." id="text">
+                                <input type="text" class="form-control" name="q" required="" data-form-field="Text" placeholder="Ingresa palabras claves..." id="q">
                                 <span class="input-group-btn"><button type="submit" class="btn btn-black"><span class="etl-icon icon-magnifying-glass mbr-iconfont mbr-iconfont-btn"></span>BUSCAR</button></span>
                             </div>
                         </form>
