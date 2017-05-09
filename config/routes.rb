@@ -6,25 +6,28 @@ Rails.application.routes.draw do
 
   get 'student/search'
 
-  get 	'/registro', to: 'home#register'
-  post 	'/registro', to: 'home#validate_register'
+  resources :cuestionario
 
-  get   '/login', to: 'home#login'
-  post  '/login', to: 'home#validate_login'
+  get 	'/registro',                    to: 'home#register'
+  post 	'/registro',                    to: 'home#validate_register'
 
-  get 	'/experto', to: 'expert#home'
-  post 	'/experto', to: 'expert#create'
-  post 	'/experto', to: 'expert#update'
-  get 	'/experto', to: 'expert#show'
-  post 	'/experto', to: 'expert#show'
-  get   '/experto/validar_contenido', to: 'expert#edit'
-  get   '/experto/denie', to: 'expert#denegar'
-  get   '/experto/aprove', to: 'expert#aprobar'
+  get   '/login',                       to: 'home#login'
+  post  '/login',                       to: 'home#validate_login'
 
-  get '/estudiante',       to: 'student#home'
-  get '/buscar_contenido', to: 'student#search'
-  get '/results',          to: 'student#show'
-  post '/calificar',       to: 'student#calificar'
+  get   'search',                       to: 'home#no_student'
+
+  get 	'/experto',                     to: 'expert#home'
+  post 	'/experto',                     to: 'expert#create'
+  get 	'/experto',                     to: 'expert#show'
+  post 	'/experto',                     to: 'expert#show'
+  get   '/experto/validar_contenido',   to: 'expert#edit'
+  get   '/experto/denie',               to: 'expert#denegar'
+  get   '/experto/aprove',              to: 'expert#aprobar'
+
+  get '/estudiante',                    to: 'student#home'
+  get '/buscar_contenido',              to: 'student#search'
+  get '/results',                       to: 'student#show'
+  post '/calificar',                    to: 'student#calificar'
 
   root 	'home#home'
 
