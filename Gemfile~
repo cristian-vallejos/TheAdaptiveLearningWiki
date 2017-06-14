@@ -1,0 +1,180 @@
+source 'https://rubygems.org'
+
+#ruby "2.2.2"
+#ruby "2.1.2"
+# ruby "2.1.5"
+
+gem 'rails', '4.2.1'
+
+## MercadoPago
+gem 'mercadopago-sdk', :git => 'git://github.com/mercadopago/sdk-ruby.git'
+
+gem 'woocommerce_api', :git => 'git://github.com/CentryCL/wc-api-ruby.git'
+
+## Amazon S3 e Imagenes
+gem 'aws-s3', :require => 'aws/s3'          # Conexion con amazon. https://github.com/marcel/aws-s3
+gem 'aws-sdk', '~> 1.0', :require => false  # Conexion con amazon. https://github.com/aws/aws-sdk-ruby
+
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem "paperclip", "~> 4.2.1"                 # Almacenar imagenes. https://github.com/thoughtbot/paperclip
+gem 'delayed_paperclip'
+gem 'fastimage', '~> 2.0'                   # Permite saber las dimensiones de la imagen desde una URI (Se usa para verificar el tamanio en la carga masiva).
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
+
+
+## Autenticacion & Autorizacion
+gem 'devise'
+gem 'pundit'
+
+## Bases de Datos
+gem 'mongoid', "~> 4.0.0"
+gem 'mongoid_search'
+gem 'mongoid-slug'
+gem 'bson_ext'
+gem 'mongoid_alize'
+gem 'mongoid-enum', '~> 0.3.0' # Para utilizar enum en los modelos
+gem "mongo_session_store-rails4"
+
+## Correos Electronicos
+gem 'mail_gate'                             # Restringe envio de correos. https://github.com/dewski/mail_gate
+gem 'mail_view'                             # Previsualizar correos. https://github.com/37signals/mail_view
+gem 'premailer-rails'
+
+## CSS
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'font_assets'
+gem 'font-awesome-rails'
+gem 'sass-rails', '~> 5.0.3'                  # SCSS para stylesheets
+gem 'heroku-deflater', :group => :production
+
+## Errores
+gem 'raygun4ruby'
+
+## Javascript
+gem 'coffee-rails', '~> 4.1.0'    # CoffeeScript para .js.coffee
+gem 'eco'                         # Templates JS con Eco.
+gem 'gon'                         # Enviar datos desde un controlador a javascript. https://github.com/gazay/gon
+gem 'google-analytics-turbolinks' # Google Analytics with Turbolinks
+gem 'jquery-rails'                # JQuery como libreria de JavaScript
+gem 'jquery-ui-rails'             # Jquery UI
+gem 'js-routes'                   # Rails Routes en JS https://github.com/railsware/js-routes
+gem 'turbolinks', '~> 2.5.3'      # Hace vinculos en el sitio mas rapido. https://github.com/rails/turbolinks
+gem 'turboboost'                  # Turbolinks para formularios. https://github.com/waymondo/turboboost
+gem 'uglifier', '~> 2.7.1'        # Comprimer js
+gem 'bootstrap-tagsinput-rails', '~> 0.4.2.1'   # Genera tags con formato bootstrap cuando se ingresan datos separados por coma en los input.
+gem 'bootstrap-datepicker-rails', '~> 1.4.0'  # Calendario en campos de fecha
+
+## JSON
+gem 'oj', :require => false     # JSON optimizado. https://github.com/ohler55/oj
+gem 'rabl'
+
+## Patrones de Diseno
+gem 'draper'                    # Decoradores para Modelos. https://github.com/drapergem/draper
+
+## Servidores
+#gem 'rails_12factor', :group => :production  # Logs Visible en Heroku. https://devcenter.heroku.com/articles/rails-integration-gems
+gem 'redis-rails'
+gem 'unicorn'
+
+## Traduccion
+gem 'it'                          # Traducciones. http://rubygems.org/gems/it
+gem 'rails-i18n', '~> 4.0.0'      # Datos de Localidades. https://github.com/svenfuchs/rails-i18n
+
+## Vistas
+gem 'kaminari'                    # Paginacion. https://github.com/amatsuda/kaminari
+gem 'kaminari-mongoid'
+gem 'kaminari-actionview'
+
+gem 'unicode_utils'               # Algoritmos Unicode Ruby. https://github.com/lang/unicode_utils
+
+## Otro
+gem 'hirb'                        # Ver tablas en Hirb. https://github.com/cldwalker/hirb
+gem 'spring'
+
+gem 'rack-robustness'
+gem 'responders', '~> 2.1.0'
+gem 'httparty'
+gem 'validates_email_format_of'
+gem 'rack-cache'
+
+## Shopify
+gem 'shopify_api'
+
+##QR code
+gem 'rqrcode', '~> 0.7.0'
+gem 'prawn-qrcode', '~> 0.2.2.1'
+
+## HTTP and REST requests
+##gem 'rest-client', '~> 1.8.0'
+gem 'addressable', '~> 2.3.8'
+
+##Jobs
+gem 'sinatra', require: false
+gem 'sidekiq', '~> 3.3.4'
+
+#Lectura de excel (en menu de carga masiva)
+gem 'roo'
+gem 'roo-xls'
+
+gem 'mongoid-ancestry', '~> 0.4.2' #Para categorias de Linio (jerarquia padre-hijo)
+
+# OAuth
+gem 'doorkeeper'
+gem 'doorkeeper-mongodb', github: "doorkeeper-gem/doorkeeper-mongodb"
+gem 'doorkeeper-i18n'
+
+group :doc do
+  gem 'sdoc', :require => false
+  gem 'rocco', :git => "git://github.com/rtomayko/rocco.git"
+end
+
+group :development, :test do
+  # Test mails in browser
+  gem 'byebug'
+  gem 'letter_opener'
+  gem 'annotate', :require => false
+  gem 'better_errors'
+  gem 'binding_of_caller', :require => false
+  gem 'factory_girl_rails'
+  gem 'meta_request'
+  gem 'quiet_assets'
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem "switch_user"
+
+  #A library for generating fake data such as names, addresses, and phone numbers
+  gem 'faker' 
+
+end
+
+group :test do
+  gem 'capybara',         :require => false
+  gem 'cucumber-rails',   :require => false
+  gem 'database_cleaner', :require => false
+  gem 'email_spec',       :require => false
+  gem 'launchy'
+end
+
+## foreman start -f Procfile.development
+## annotate --exclude tests,fixtures,factories
+#
+# rake paperclip:refresh:thumbnails CLASS=User
+
+
+
+# para el multipart/form-data
+gem 'rest-client', github: "rest-client/rest-client"
+
+#charts
+gem 'chartkick'
+gem 'groupdate'
+gem 'active_median'
+gem 'hightop'
+gem 'human_date'
+
+# EXCEL
+gem 'axlsx'
+gem 'rubyzip', '= 1.1.0'
+gem 'zip-zip'
+gem 'axlsx_rails'
+

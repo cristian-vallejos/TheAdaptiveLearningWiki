@@ -66,7 +66,11 @@ class HomeController < ApplicationController
   end
 
   def no_student
-    @archivos = Contenido.where(:validado? => true)
+    if params[:tipo].to_i != 100
+      @archivos = Contenido.where(:validado? => true).where(:tipo => params[:tipo].to_i)
+    else
+      @archivos = Contenido.where(:validado? => true)
+    end
     @search = params[:q].split(" ")
   end
 

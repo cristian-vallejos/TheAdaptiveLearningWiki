@@ -131,7 +131,7 @@
                         </div>
                     </div>
                     <div class="mbr-table-cell">
-                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar" style="height: 100% !important;"><li class="nav-item nav-btn" style="color: white;">Sesión iniciada como <a class="nav-link" href="<%= root_path %>">Usuario</a></li></ul>
+                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar" style="height: 100% !important;"><li class="nav-item nav-btn" style="color: white;">Sesión iniciada como <a class="nav-link" href="<%= root_path %>">Felipe Montero Díaz</a></li></ul>
 
                         <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar" style="    margin-right: 17.5%; height: 100% !important;">
                             <li class="nav-item <%= action_name == 'home' ? 'active' : '' %>">
@@ -174,14 +174,14 @@
                                           <div class="deal">
                                             <span><p><%= i.nombre %></p></span>
                                           </div>
-                                          <span class="price"><a href="<%= i.referencia %>" target="_blank"><img height="40%" width="40%" src="http://iconbug.com/data/5b/507/52ff0e80b07d28b590bbc4b30befde52.png"></a></span>
+                                          <span class="price"><a href="<%= i.referencia %>" target="_blank"><img height="40%" width="40%" src="<% if i.tipo == 0 %> http://www.freeiconspng.com/uploads/pdf-icons-free-icons-in-file-icons-18.png <% elsif i.tipo == 1 %> https://thediscourseunit.files.wordpress.com/2016/05/doc1.png <% elsif i.tipo == 2 %> http://www.freeiconspng.com/uploads/ppt-icons-free-icons-in-file-icons-vs-2--icon-search-engine--6.png <% end %>"></a></span>
                                         </div>
                             <%      else %>
                                         <div class="promo " style="margin-bottom: 10%" onmouseover="this.onmouseover = null;">
                                           <div class="deal">
                                             <span><p><%= i.nombre %></p></span>
                                           </div>
-                                          <span class="price"><a href="<%= i.referencia %>" target="_blank"><img height="40%" width="40%" src="http://iconbug.com/data/5b/507/52ff0e80b07d28b590bbc4b30befde52.png"></a></span>
+                                          <span class="price"><a href="<%= i.referencia %>" target="_blank"><img height="40%" width="40%" src="<% if i.tipo == 0 %> http://www.freeiconspng.com/uploads/pdf-icons-free-icons-in-file-icons-18.png <% elsif i.tipo == 1 %> https://thediscourseunit.files.wordpress.com/2016/05/doc1.png <% elsif i.tipo == 2 %> http://www.freeiconspng.com/uploads/ppt-icons-free-icons-in-file-icons-vs-2--icon-search-engine--6.png <% end %>"></a></span>
                                         </div>
                             <%      end
                                 contador = contador + 1

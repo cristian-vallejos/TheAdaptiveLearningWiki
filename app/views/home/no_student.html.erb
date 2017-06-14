@@ -175,7 +175,7 @@
 								  		if i.tags.include?(word)
 							%>
 											<tr>
-											    <td><a href="<%= i.referencia %>" target="_blank"><img height="40px" width="35px" src="http://iconbug.com/data/5b/507/52ff0e80b07d28b590bbc4b30befde52.png"></a></td>
+											    <td><a href="<%= i.referencia %>" target="_blank"><img height="40px" width="35px" src="<% if i.tipo == 0 %> http://www.freeiconspng.com/uploads/pdf-icons-free-icons-in-file-icons-18.png <% elsif i.tipo == 1 %> https://thediscourseunit.files.wordpress.com/2016/05/doc1.png <% elsif i.tipo == 2 %> http://www.freeiconspng.com/uploads/ppt-icons-free-icons-in-file-icons-vs-2--icon-search-engine--6.png <% end %>"></a></td>
 											    <td><strong><%= i.nombre%></strong></td>
 											    <td align="center"><%= '%.1f' % i.calificacion.to_f %></td>
 											</tr>

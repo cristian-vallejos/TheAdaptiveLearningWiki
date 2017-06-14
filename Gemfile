@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# Mongo Gem
+# => Mongo Gem
 gem 'mongoid'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

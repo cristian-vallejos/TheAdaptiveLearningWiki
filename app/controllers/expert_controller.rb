@@ -5,10 +5,18 @@ class ExpertController < ApplicationController
   end
 
   def create
-    urls = scrap_webs(params[:text])
+    urls = scrap_webs(params[:text], params[:tipo])
     @lista = []
     urls.each do |url|
       @lista << url
+    end
+
+    if params[:tipo] == "pdf"
+      type = 0
+    elsif params[:tipo] == "doc"
+      type = 1
+    else
+      type = 2
     end
 
     @urls = []
@@ -33,14 +41,14 @@ class ExpertController < ApplicationController
     end
 
     (0..(urls.length-1)).each do |n|
-      Contenido.find_or_create_by(nombre: @titles[n], referencia: @urls[n], tags: params[:text].split(" "))
+      Contenido.find_or_create_by(nombre: @titles[n], referencia: @urls[n], tags: params[:text].split(" "), tipo: type)
     end
 
     redirect_to experto_validar_contenido_path
   end
 
   def edit
-    @archivos = Contenido.where(:validado? => false)
+    @archivos = Contenido.where(:validado? => false).order_by(:created_at => 'desc')
   end
 
   def update
@@ -64,13 +72,13 @@ class ExpertController < ApplicationController
   end
 
   private
-    def scrap_webs(palabras)
+    def scrap_webs(palabras,tipo)
       aux = ''
       palabras = palabras.split(" ")
       for palabra in palabras
         aux += palabra+" "
       end
-      doc = Nokogiri::HTML(open("https://www.google.ca/search?as_q="+aux+"&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&as_filetype=pdf&as_rights="))
+      doc = Nokogiri::HTML(open("https://www.google.ca/search?as_q="+aux+"&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&as_filetype="+tipo+"&as_rights="))
       entries = doc.css('.r>a')
       #entries[0]['href'] Asi se sacan las URLS
       return entries

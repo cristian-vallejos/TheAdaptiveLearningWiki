@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   get 'student/home'
 
   get 'student/show'
