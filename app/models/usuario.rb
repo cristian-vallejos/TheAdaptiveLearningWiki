@@ -3,8 +3,8 @@ class Usuario
   include Mongoid::Document
 
   # == Constantes
-  GENDER_MALE   = 1
-  GENDER_FEMALE = 2
+  YES           = 1
+  NO            = 0
 
   ROLE_ADMIN    = 0
   ROLE_EXPERT   = 1
@@ -21,23 +21,15 @@ class Usuario
   field :contrasena,              type: String
   field :mail,                    type: String
   field :tipo,                    type: Integer,  default: ROLE_STUDENT
-  field :perfil,                  type: Integer,  default: DIVERGING
-  field :gender,                  type: Integer
+  field :perfil,                  type: Integer
   field :birthday,                type: Date
+  field :test_solved?,            type: Integer,  default: NO
 
   # == Asociaciones
   #has_many :subscriptions, class_name: "Payments::Subscription"
   #has_many :quotes,         class_name: "Payments::Quote"
 
   # == Métodos
-  def male?
-    (self.gender == User::GENDER_MALE)
-  end
-
-  def female?
-    (self.gender == User::GENDER_FEMALE)
-  end
-
   def admin?
     (self.role == User::ROLE_ADMIN)
   end

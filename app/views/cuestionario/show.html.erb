@@ -98,89 +98,54 @@
         <div class="mbr-table-cell">
             <div class="container">
               <div class="row">
-                  <div class="col-sm-12 col-md-12">
+                  <div class="col-sm-10 col-md-10 col-md-offset-1">
                       <div class="account-wall" style="border-radius: 20px">
-                          <h1 class="mbr-section-title display-1 text-center" style="color: rgb(41, 105, 176);">Cuestionario de Registro*<br></h1>
-                          <h4 class="text-center">Por ahora, los perfiles son asignados de manera aleatoria, pues no es la funcionalidad prioritaria del cliente (por ahora).<br>En la siguiente iteración esto será implementado en su totalidad.</h4>
-                          <!--<form class="form-signin" action="<%= registro_path %>" method="post" style="max-width: none !important;">
+                          <h1 class="mbr-section-title display-1 text-center" style="color: rgb(41, 105, 176);">Cuestionario de Registro<br></h1>
+                          <h4  class="text-center" style="text-align: justify; margin-left: 11%; margin-right: 11%;">A continuación, se solicita completar 12 frases, las cuales pueden finalizar de 4 formas distintas. Para esto, debes ordenar las cuatro opciones según lo que más se ajuste a tu manera de aprender y/o trabajar. Por favor, enuméralas desde el 1 al 4, asignando el número 1 a la que se ajuste de peor manera a ti y el 4 la que mejor se ajuste.<br><b>¡Es de suma importancia que todas las terminaciones tengan un número asignado!</b></h4>
+                          <!--<form class="form-signin" action="<%= cuestionario_path %>" method="post" style="max-width: none !important;">-->
                             <div class="row">
-                              <div class="col-sm-4 col-md-4">
-                                <div class="table-responsive">          
-                                  <table class="table">
-                                    <thead>
-                                      <tr>
-                                        <th></th>
-                                        <th>Lastname</th>
-                                        <th>Age</th>
-                                        <th>City</th>
-                                        <th>Country</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>Anna</td>
-                                        <td>Pitt</td>
-                                        <td>35</td>
-                                        <td>New York</td>
-                                        <td>USA</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-                              <div class="col-sm-4 col-md-4">
-                                <div class="table-responsive">          
-                                  <table class="table">
-                                    <thead>
-                                      <tr>
-                                        <th></th>
-                                        <th>Lastname</th>
-                                        <th>Age</th>
-                                        <th>City</th>
-                                        <th>Country</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>Anna</td>
-                                        <td>Pitt</td>
-                                        <td>35</td>
-                                        <td>New York</td>
-                                        <td>USA</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-                              <div class="col-sm-4 col-md-4">
-                                <div class="table-responsive">          
-                                  <table class="table">
-                                    <thead>
-                                      <tr>
-                                        <th></th>
-                                        <th>Lastname</th>
-                                        <th>Age</th>
-                                        <th>City</th>
-                                        <th>Country</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>Anna</td>
-                                        <td>Pitt</td>
-                                        <td>35</td>
-                                        <td>New York</td>
-                                        <td>USA</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
+                              <div class="col-sm-10 col-md-10 col-md-offset-1">
+                                <%  
+                                  respondidas = 0
+                                  contador = 1
+                                  @cuestionario.shuffle.each do |pregunta|
+                                %>      
+                                    <div class="table-responsive" id="tabla<%= contador %>" style="<% if contador != 1 %>display: none;<% end %>">
+                                      <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th class="col-sm-2 col-md-2"></th>
+                                            <th class="col-sm-2 col-md-2"><%= pregunta.ec_answer %></th>
+                                            <th class="col-sm-2 col-md-2"><%= pregunta.or_answer %></th>
+                                            <th class="col-sm-2 col-md-2"><%= pregunta.ca_answer %></th>
+                                            <th class="col-sm-2 col-md-2"><%= pregunta.ea_answer %></th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td><%= pregunta.phrase %></td>
+                                            <td><input id="ec<%= contador %>" name="ec<%= contador %>" type="text" class="form-control" style="margin-bottom: 1%" placeholder="1, 2, 3 ó 4" autofocus></td>
+                                            <td><input id="or<%= contador %>" name="or<%= contador %>" type="text" class="form-control" style="margin-bottom: 1%" placeholder="1, 2, 3 ó 4" autofocus></td>
+                                            <td><input id="ca<%= contador %>" name="ca<%= contador %>" type="text" class="form-control" style="margin-bottom: 1%" placeholder="1, 2, 3 ó 4" autofocus></td>
+                                            <td><input id="ea<%= contador %>" name="ea<%= contador %>" type="text" class="form-control" style="margin-bottom: 1%" placeholder="1, 2, 3 ó 4" autofocus></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <div class="text-center">
+                                        <button type=button align="center" class="btn" onclick="document.getElementById('tabla<%= contador %>').style.display = 'none'; <% if contador != 12 %> document.getElementById('tabla<%= contador+1 %>').style.display = 'block' <% end %>; <% if contador == 12 %> document.getElementById('submit_button').style.display = 'initial'; document.getElementById('welcome_message').style.display = 'initial'; <% end %>">Ver siguiente</button>
+                                      </div>       
+                                    </div>
+                                <% 
+                                    contador = contador + 1
+                                  end
+                                %> 
                               </div>
                             </div>
-                          </form>-->
-                          <br><div class="text-center">
-                            <button align="center" class="btn" onclick="alert('¡Usuario registrado correctamente!'); window.location = '/'"">Continuar al menú de acceso</button>
-                          </div>
+                            <div class="text-center">
+                              <h4  class="text-center" id="welcome_message" style="text-align: center; display: none;">Tus respuestas han sido registradas correctamente en nuestra base de datos.<br><b>¡Bienvenid@ a The Adaptive Learning Wiki!</b></h4><br><br>
+                              <button id="submit_button" align="center" class="btn" style="display: none;" onclick="alert('¡Usuario registrado correctamente!'); window.location = '/'; <% user = Usuario.find_by(id: params[:id]); user.update({test_solved?: 1}) %>">Continuar al menú de acceso</button>
+                            </div>
+                          <!--</form>-->
                       </div>
                   </div>
               </div>

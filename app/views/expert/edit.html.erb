@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="mbr-table-cell">
-                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar" style="height: 100% !important;"><li class="nav-item nav-btn" style="color: white;">Sesión iniciada como <a class="nav-link" href="<%= root_path %>">Cristian Vallejos Pérez</a></li></ul>
+                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar" style="height: 100% !important;"><li class="nav-item nav-btn" style="color: white;">Sesión iniciada como <a class="nav-link" href="<%= root_path %>"></a></li></ul>
 
                         <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar" style="    margin-right: 17.5%; height: 100% !important;">
                             <li class="nav-item <%= action_name == 'home' ? 'active' : '' %>">
@@ -163,8 +163,8 @@
                                         <span><p><%= i.nombre %></p></span>
                                       </div>
                                       <span class="price"><a href="<%= i.referencia %>" target="_blank"><img height="40%" width="40%" src="<% if i.tipo == 0 %> http://www.freeiconspng.com/uploads/pdf-icons-free-icons-in-file-icons-18.png <% elsif i.tipo == 1 %> https://thediscourseunit.files.wordpress.com/2016/05/doc1.png <% elsif i.tipo == 2 %> http://www.freeiconspng.com/uploads/ppt-icons-free-icons-in-file-icons-vs-2--icon-search-engine--6.png <% end %>"></a></span>
-                                      <button type="button" class="button success"><a href="<%= experto_aprove_path+'?id='+i.id.to_s %>">Aprobar</a></button>
-                                      <button type="button" class="button danger"><a href="<%= experto_denie_path+'?id='+i.id.to_s %>">Denegar</a></button>
+                                      <button type="button" class="button success" onclick="window.location = '<%= experto_aprove_path+'?id='+i.id.to_s %>';">Aprobar</button>
+                                      <button type="button" class="button danger" onclick="window.location = '<%= experto_denie_path+'?id='+i.id.to_s %>';">Denegar</button>
                                     </div>
                         <%      else %>
                                     <div class="promo " style="margin-bottom: 10%" onmouseover="this.onmouseover = null;">
@@ -172,8 +172,8 @@
                                         <span><p><%= i.nombre %></p></span>
                                       </div>
                                       <span class="price"><a href="<%= i.referencia %>" target="_blank"><img height="40%" width="40%" src="<% if i.tipo == 0 %> http://www.freeiconspng.com/uploads/pdf-icons-free-icons-in-file-icons-18.png <% elsif i.tipo == 1 %> https://thediscourseunit.files.wordpress.com/2016/05/doc1.png <% elsif i.tipo == 2 %> http://www.freeiconspng.com/uploads/ppt-icons-free-icons-in-file-icons-vs-2--icon-search-engine--6.png <% end %>"></a></span>
-                                      <button type="button" class="button success"><a href="<%= experto_aprove_path+'?id='+i.id.to_s %>">Aprobar</a></button>
-                                      <button type="button" class="button danger"><a href="<%= experto_denie_path+'?id='+i.id.to_s %>">Denegar</a></button>
+                                      <button type="button" class="button success" onclick="window.location = '<%= experto_aprove_path+'?id='+i.id.to_s %>';">Aprobar</button>
+                                      <button type="button" class="button danger" onclick="window.location = '<%= experto_denie_path+'?id='+i.id.to_s %>';">Denegar</button>
                                     </div>
                         <%      end
                             contador = contador + 1

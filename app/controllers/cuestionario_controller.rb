@@ -18,6 +18,6 @@ class CuestionarioController < ApplicationController
   end
 
   def show
-    
+    @cuestionario = Pregunta.all
   end
 end
